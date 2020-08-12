@@ -7,9 +7,14 @@ export default class Player{
         this.loaded = false;
         this.current = 0;
         this.startTime = -1;
-        // this.player = new Tone.Player(url, this.loaded.bind(this)).toMaster();
-        this.player = new Tone.Player(url, this.loadDone.bind(this)).toMaster();
         this.loadCallback = loadCallback;
+        this.player = new Tone.Player(url, this.loadDone.bind(this)).toMaster();
+        //this.player = new Tone.Player(url, this.loadDone.bind(this)).toMaster();
+        // this.player = new Tone.Player(url, ()=>{
+        //     console.log('player done123');
+        // }).toMaster();
+        //this.player = new Tone.Player({url: url, onload: ()=>{console.log('player loaded!!!!!')}}).toMaster();
+        
         // this.player.onstop = ()=> {
         //     console.log('reach stop!!!');
         // }
@@ -18,7 +23,7 @@ export default class Player{
     }
     
     loadDone() {
-        //console.log('loaded');
+        console.log('player loaded');
         this.loaded = true;
         this.duration = this.player.buffer.duration;
         if (this.loadCallback) this.loadCallback();

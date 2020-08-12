@@ -13,7 +13,7 @@ console.log(audioFile);
 // p1.autostart = true;
 
 let player = new Player(audioFile, ()=>{
-    console.log('yo', player.duration);
+    console.log('yo', player.duration, player.loaded);
     playerUI.setMax(player.duration);
     //player.play();
 });
