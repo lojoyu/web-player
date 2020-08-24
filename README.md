@@ -9,7 +9,7 @@ This is a player using Tone.js.
 
 ### Pre-Install
 
-The package use `jquery` and `tone.js`.
+The package use `jquery` and `tone.js(v13)`.
 
 ```shell
 npm install --save jquery

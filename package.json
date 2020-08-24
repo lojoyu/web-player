@@ -1,12 +1,12 @@
 {
   "name": "@zonesoundcreative/web-player",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/index.min.js",
   "scripts": {
     "build": "webpack --mode production",
     "prepublish": "npm run build",
-    "test": "webpack-dev-server --config webpack.test.config.babel.js"
+    "test": "webpack-dev-server --host 0.0.0.0 --config webpack.test.config.babel.js"
   },
   "author": "",
   "license": "ISC",

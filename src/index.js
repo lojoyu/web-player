@@ -30,11 +30,12 @@ export default class Player{
     }
     
     play(from=this.current) {
+        //console.log('play~'+this.loaded);
         if (!this.loaded) return;
         this.current = from;
         this.startTime = Date.now();
         //console.log('play', this.player);
-        this.player.start(0, from);
+        this.player.start("+0", from);
         //this.player.start(0, 10);
     }
 
@@ -65,7 +66,7 @@ export class PlayerUI {
             second: true,
             range: true,
             callback: null,
-            usePlay: true
+            usePlay: true,
         }
         //console.log(config);
         this.config = {...temp, ...config};
@@ -116,6 +117,7 @@ export class PlayerUI {
         this.range.val(0);
         this.sec.html('00:00');
         this.btn.attr('player-disable', false);
+        if (this.config.callback) this.config.callback({id:this.id, state:'restart', now:0});
     }
 
     setMax(duration) {
